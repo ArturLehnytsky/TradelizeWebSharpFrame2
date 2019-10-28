@@ -14,9 +14,6 @@ namespace TradelizeWebPortal.Pages
 
         }
 
-        
-
-
         string login = "tqav3";
         string email = "tqav3@yopmail.com";
         string password = "12345";
