@@ -14,6 +14,7 @@ namespace TradelizeWebPortal.Pages
 
         }
 
+        
         string login = "tqav3";
         string email = "tqav3@yopmail.com";
         string password = "12345";
@@ -30,7 +31,9 @@ namespace TradelizeWebPortal.Pages
         By recoveryBtn = By.ClassName("welcome-btn");
         By rememberPass = By.LinkText("REMEMBER PASSWORD?");
 
-        
+        //The Score page is open If registration is succesful. Find H1 tag with "TRADALIZE TOP SCORE TRADES" 
+        By logoTitle = By.ClassName("logo-title");
+
 
         public void OpenLoginPage()
         {
@@ -60,7 +63,21 @@ namespace TradelizeWebPortal.Pages
             Click(recoveryBtn);
         }
 
+        public void CheckAuthorizetion()
+        {
+            bool actual = driver.FindElement(logoTitle).Displayed;
+            
 
+            if (actual)
+            {
+                Console.WriteLine("Authorizetion test is PASSED");
+            }
+
+            else
+            {
+                Console.WriteLine("Authorizetion test is FAILED");
+            }
+        }
 
     }
 }

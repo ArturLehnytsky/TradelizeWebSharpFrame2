@@ -10,16 +10,15 @@ namespace TradelizeWebPortal.Tests
 {
     public class TestRegistration : Browser
     {
+        
+        
         [Test]
         public void RegTest()
         {
             reg.OpenRegPage();
             reg.InputSignUpData();
             reg.ClickRegButton();
-            // wait 10 sec
-            System.Threading.Thread.Sleep(10000);
-
-
+            
         }
     }
 }

@@ -23,6 +23,8 @@ namespace TradelizeWebPortal.Pages
         By checkBoxAgreement = By.XPath("//label[@class='custom-checkbox']//i");
         By signUpbtn = By.ClassName("welcome-btn");
 
+        
+
         public void OpenRegPage()
         {
             driver.Navigate().GoToUrl("https://qa-portal.tradelize.com/auth/signup");
@@ -47,5 +49,7 @@ namespace TradelizeWebPortal.Pages
         {
             Click(signUpbtn);
         }
+
+
     }
 }

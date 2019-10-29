@@ -20,7 +20,8 @@ namespace TradelizeWebPortal.Tests
         public void TestAuthorizationByLogin()
         {
             log.OpenLoginPage();
-            log.SignInByEmail();    
+            log.SignInByLogin();
+            log.CheckAuthorizetion();
             
         }
     }
