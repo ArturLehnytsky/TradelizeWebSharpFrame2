@@ -31,7 +31,21 @@ namespace TradelizeWebPortal.Pages
 
         public void InputSignUpData()
         {
-            WriteText(userRegLogin, GenerateMail().Substring(0, GenerateMail().IndexOf('@')));
+            string mailLogin = GenerateMail();
+
+            WriteText(userRegLogin, mailLogin.Substring(0, mailLogin.IndexOf('@')));
+            WriteText(userRegEmail, mailLogin);
+            WriteText(retypeEmail, mailLogin);
+            WriteText(userRegPass, "Abcde12345");
+            WriteText(retypePass, "Abcde12345");
+            WriteText(RefferalCode, "7faf1110-64df-458d-86f3-79f4c53c88a6");
+            Click(checkBoxAgreement);
+            
+        }
+
+        public void ClickRegButton()
+        {
+            Click(signUpbtn);
         }
     }
 }

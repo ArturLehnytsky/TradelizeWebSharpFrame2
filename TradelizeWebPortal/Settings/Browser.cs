@@ -14,6 +14,7 @@ namespace TradelizeWebPortal.Settings
     {
         public IWebDriver driver;
         public Login log;
+        public Registration reg;
 
         [SetUp]
         public void Initialize()
@@ -21,6 +22,7 @@ namespace TradelizeWebPortal.Settings
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             log = new Login(driver);
+            reg = new Registration(driver);
         }
 
         [TearDown]
