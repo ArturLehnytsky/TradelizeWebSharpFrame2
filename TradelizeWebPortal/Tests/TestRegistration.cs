@@ -16,6 +16,7 @@ namespace TradelizeWebPortal.Tests
         public void RegTest()
         {
             reg.OpenRegPage();
+
             reg.InputSignUpData();
             reg.ClickRegButton();
             
