@@ -17,7 +17,7 @@ namespace TradelizeWebPortal.DisposableMailServices
 
         By emailNameYopmail = By.Id("login");
         By sbut = By.ClassName("sbut");
-        //By letterTradelize = By.LinkText
+        By letterTradelize = By.LinkText("Confirm email");
 
         public void OpenYopmail()
         {
