@@ -9,25 +9,26 @@ namespace TradelizeWebPortal.Pages
 {
     public class Login : Base 
     {
+        //создать ексельку и тянуть юзеров оттуда
+        //string login = "tqav3";
+        string userEmail = "tqav3@yopmail.com";
+        string password = "12345";
         public Login(IWebDriver driver) : base(driver)
         {
 
         }
 
-        
-        string login = "tqav3";
-        string email = "tqav3@yopmail.com";
-        string password = "12345";
+       
 
         // Login Page
-        By userLogin = By.XPath("//div[@id='login']//div[1]//input[1]");
-        By userPassword = By.XPath("//input[@placeholder='ENTER YOUR PASSWORD HERE']");
+        By userLogin = By.CssSelector("input[formcontrolname='login']");
+        By userPassword = By.CssSelector("input[formcontrolname='password']");
         By welcomeBtn = By.ClassName("welcome-btn");
         By forgotPassword = By.LinkText("FORGOT PASSWORD?");
         By registerNowlink = By.LinkText("OR REGISTER NOW");
 
         //Forgot Password
-        By recoveryByEmail = By.XPath("//input[@placeholder='EMAIL']");
+        By recoveryByEmail = By.CssSelector("input[formcontrolname='email']");
         By recoveryBtn = By.ClassName("welcome-btn");
         By rememberPass = By.LinkText("REMEMBER PASSWORD?");
 
@@ -43,7 +44,7 @@ namespace TradelizeWebPortal.Pages
 
         public void SignInByLogin()
         {
-            WriteText(userLogin, login);
+            WriteText(userLogin, userEmail.Substring(0,userEmail.IndexOf("@")));
             WriteText(userPassword, password);
             Click(welcomeBtn);
             
@@ -51,7 +52,7 @@ namespace TradelizeWebPortal.Pages
 
         public void SignInByEmail()
         {
-            WriteText(userLogin, email);
+            WriteText(userLogin, userEmail);
             WriteText(userPassword, password);
             Click(welcomeBtn);
         }
@@ -59,7 +60,7 @@ namespace TradelizeWebPortal.Pages
         public void ForgotPassword()
         {
             Click(forgotPassword);
-            WriteText(recoveryBtn, email);
+            WriteText(recoveryBtn, userEmail);
             Click(recoveryBtn);
         }
 
