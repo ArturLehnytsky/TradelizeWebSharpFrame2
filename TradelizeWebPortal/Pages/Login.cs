@@ -9,7 +9,7 @@ namespace TradelizeWebPortal.Pages
 {
     public class Login : Base 
     {
-        //создать ексельку и тянуть юзеров оттуда
+        //TO DO: создать ексельку и тянуть юзеров оттуда
         //string login = "tqav3";
         string userEmail = "tqav3@yopmail.com";
         string password = "12345";

@@ -17,15 +17,17 @@ namespace TradelizeWebPortal.Settings
         public Login log;
         public Registration reg;
         public Yopmail yop;
+        public Mirroring mir;
 
         [SetUp]
         public void Initialize()
         {
             driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
             log = new Login(driver);
             reg = new Registration(driver);
             yop = new Yopmail(driver);
+            mir = new Mirroring(driver);
+            
         }
 
         [TearDown]
